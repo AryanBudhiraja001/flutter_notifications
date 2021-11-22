@@ -437,7 +437,7 @@ static FlutterError *getFlutterError(NSError *error) {
                 notification.repeatInterval = NSCalendarUnitWeekOfYear;
                 break;
         }
-       // notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:timeInterval];
+        notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:timeInterval];
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
         result(nil);
     }
