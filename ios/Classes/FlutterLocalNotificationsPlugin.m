@@ -401,7 +401,7 @@ static FlutterError *getFlutterError(NSError *error) {
                                                                  NSCalendarUnitHour  |
                                                                  NSCalendarUnitMinute|
                                                                  NSCalendarUnitSecond) fromDate:date];
-        UNCalendarNotificationTrigger *trigger =   [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:dateComponents repeats:false];
+        UNCalendarNotificationTrigger *trigger =   [UNCalendarNotificationTrigger triggerWithDateMatchingComponents:dateComponents repeats:true];
         [self addNotificationRequest:[self getIdentifier:arguments] content:content result:result trigger:trigger];
     } else {
         UILocalNotification * notification = [self buildStandardUILocalNotification:arguments];
