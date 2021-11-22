@@ -421,7 +421,7 @@ static FlutterError *getFlutterError(NSError *error) {
         NSTimeInterval timeInterval = 0;
         switch([arguments[REPEAT_INTERVAL] integerValue]) {
             case EveryMinute:
-                timeInterval = 60 * 3;
+                timeInterval = 180;
                 notification.repeatInterval = NSCalendarUnitMinute;
                 break;
             case Hourly:
@@ -640,7 +640,7 @@ static FlutterError *getFlutterError(NSError *error) {
 - (UNTimeIntervalNotificationTrigger *)buildUserNotificationTimeIntervalTrigger:(id)arguments  API_AVAILABLE(ios(10.0)){
     switch([arguments[REPEAT_INTERVAL] integerValue]) {
         case EveryMinute:
-            return [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:60 * 3
+            return [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:180
                                                                       repeats:YES];
         case Hourly:
             return [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:60 * 60
